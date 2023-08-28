@@ -1,4 +1,3 @@
-
 while True:    
     numero = int(input("Insira o número: "))
     print(f"\nSucessor: {numero+1}\nAntecessor: {numero-1}")
