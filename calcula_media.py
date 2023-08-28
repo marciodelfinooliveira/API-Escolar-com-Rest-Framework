@@ -1,4 +1,4 @@
-#Calcula a média de valores de uma lista indefinida
+#Calcula a média aritimática de valores de uma lista indefinida
 def calcula_media(lista):
     soma = 0
     for iterador in range(len(lista)):
