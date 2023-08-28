@@ -1,8 +1,1 @@
 print("teste")
-print("teste")
-print("teste")
-print("teste")
-print("adadada")
-print("teste2")
-print("teste2")
-print("teste2")
