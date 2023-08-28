@@ -12,7 +12,7 @@ def recebe_nota(lista):
 lista_notas = []
 while True:
     recebe_nota(lista_notas)
-    continuar = input("Deseja Continuar ? (Qualquer tecla)(s): ")
+    continuar = input("\nDeseja Continuar ? (Qualquer tecla)(s): ")
     if continuar in ["s", "S"]:
         continue
     else:
