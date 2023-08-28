@@ -1,0 +1,12 @@
+To commit in 1° time
+
+git init 
+git config user.name "nomedeusuario"
+git config credential "nomedeusuario"
+git status ( For  )
+git add .
+git commit -m "insira obs"
+git branch dev
+git 
+git push origin develop
+
