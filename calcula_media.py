@@ -5,9 +5,13 @@ def calcula_media(lista):
          soma += lista[iterador]
     return soma/len(lista)
 
+#Recebe as notas e adiciona na lista
+def recebe_nota(lista):
+    lista_notas.append(float(input("Insira a Nota: ")))
+    
 lista_notas = []
 while True:
-    lista_notas.append(float(input("Insira a Nota: ")))
+    recebe_nota(lista_notas)
     continuar = input("Deseja Continuar ? (Qualquer tecla)(s): ")
     if continuar in ["s", "S"]:
         continue
