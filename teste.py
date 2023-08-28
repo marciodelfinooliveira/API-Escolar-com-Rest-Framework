@@ -1,0 +1,5 @@
+print("teste")
+print("teste")
+print("teste")
+print("teste")
+print("0")
