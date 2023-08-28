@@ -1,12 +1,11 @@
-To commit in 1° time
+Alguns códigos que podem ajudar !!
 
 git init 
 git config user.name "nomedeusuario"
 git config credential "nomedeusuario"
-git status ( For  )
+git status
 git add .
 git commit -m "insira obs"
 git branch dev
-git 
-git push origin develop
+git push origin dev
 
