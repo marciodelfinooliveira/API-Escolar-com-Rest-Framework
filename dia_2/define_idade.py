@@ -1,11 +1,11 @@
 # A função verifica se tem mais ou menos de 18
-def verifica_idade(num):
+def verifica_idade(num: int):
     if num < 18:
         return False
     return True
 
 # Verifica se a pessoa está apta a emitir CNH
-def verifica_habilitacao(num):
+def verifica_habilitacao(num: int):
     if verifica_idade(num):
         return print("Pode Obter Carteira de Motorista !!")
     return print("Não pode obter carteira de motorista !!")

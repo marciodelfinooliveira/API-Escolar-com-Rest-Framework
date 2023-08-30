@@ -1,14 +1,15 @@
 # A função verifica se a velocidade foi acima da permitida
-def verifica_velocidade(num):
+def verifica_velocidade(num: int) -> bool:
     if num <= 80:
         return False
     return True
 
 # Calcula o valor da multa
-def calcula_multa(num):return num*7
+def calcula_multa(num: int) -> int:
+    return num*7
 
 # Verifica se o veiculo será multado e imprime na tela
-def verifica_multa(num):
+def verifica_multa(num: int) -> str:
     if verifica_velocidade(num):
         return print(f"Você cruzou o radar a {num}km/h e está sendo "+
                      f"multado em R$ {calcula_multa(num)},00 reais")
