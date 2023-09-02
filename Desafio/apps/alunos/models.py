@@ -56,7 +56,7 @@ class AlunoModel(models.Model):
 
         return True
     
-    id = models.AutoField(primary_key=True, unique=True, auto_created=True)
+    id = models.IntegerField(unique=True, auto_created=True)
     nome = models.CharField(max_length=100, blank=False, null=False)
     email = models.EmailField(max_length=100, blank=False, null=False)
     data_nascimento = models.DateField(blank=False, null=False)

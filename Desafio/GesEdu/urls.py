@@ -11,5 +11,4 @@ router.register('professores', ProfessorViewSet, basename='Professores')
 
 urlpatterns = [
     path('', include(router.urls)),
-
 ]

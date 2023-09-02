@@ -1,5 +1,4 @@
 from django.db import models
-from apps.cursos.models import CursoModel
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -64,10 +63,9 @@ class ProfessorModel(models.Model):
     
     id = models.AutoField(primary_key=True, auto_created=True)
     nome = models.CharField(max_length=100, blank=False, null=False)
-    cpf = models.CharField(primary_key=True, max_length=11, validators=[validate], blank=False, null=False)
+    cpf = models.CharField(max_length=11, validators=[validate], blank=False, null=False)
     email = models.EmailField(max_length=100, blank=False, null=False)
     formacao = models.CharField(max_length=1, choices=FORMACAO, blank=False, null=False, default='G')
-    curso = models.ForeignKey(CursoModel, on_delete=models.CASCADE, blank=False, null=False)
     
     def __str__(self) -> str:
         return self.nome

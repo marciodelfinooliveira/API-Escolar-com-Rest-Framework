@@ -1,6 +1,5 @@
 from django.db import models
 from apps.professores.models import ProfessorModel
-from apps.alunos.models import AlunoModel
 
 class CursoModel(models.Model):
     
@@ -28,10 +27,8 @@ class CursoModel(models.Model):
     carga_horaria = models.CharField(max_length=2, choices=CARGA_HORARIA, blank=False, null=False)
     descricao = models.CharField(max_length=500, blank=False, null=False)
     turno = models.CharField(max_length=1, choices=TURNO, blank=False, null=False)
-    nivel = models.CharField(max_length=1, choices=NIVEL, blank=False, null=False, default='B')
-    professor = models.ForeignKey(ProfessorModel, on_delete=models.SET_NULL, null=True, blank=True, default=None, unique=True)
-    alunos = models.ForeignKey(AlunoModel, on_delete=models.SET_NULL, null=True, blank=True, default=None)    
-          
-  
+    nivel = models.CharField(max_length=1, choices=NIVEL, blank=False, null=False, default='B')          
+    professor = models.ForeignKey(ProfessorModel, on_delete=models.CASCADE, blank=False, null=True)
+    
     def __str__(self) -> str:
         return self.nome_curso
