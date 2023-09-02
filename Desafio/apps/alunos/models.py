@@ -1,10 +1,9 @@
 from django.db import models
-from apps.cursos.models import Curso
+from apps.cursos.models import CursoModel
 from django.core.exceptions import ValidationError
-import re
 from django.utils.translation import gettext_lazy as _
 
-class Aluno(models.Model):
+class AlunoModel(models.Model):
     
 #   A função VALIDADE a seguir efetua a validação do CPF, tanto formatação quanto dígito verificadores.
 #    
@@ -61,8 +60,8 @@ class Aluno(models.Model):
     nome = models.CharField(max_length=100, blank=False, null=False)
     email = models.EmailField(max_length=100, blank=False, null=False)
     data_nascimento = models.DateField(blank=False, null=False)
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, blank=False, null=True)
-    cpf = models.CharField(max_length=11, unique=True, validators=[validate], blank=False, null=False)
+    cpf = models.CharField(primary_key=True, max_length=11, validators=[validate], blank=False, null=False)
+    curso = models.ForeignKey(CursoModel, on_delete=models.CASCADE, blank=False, null=True)
    
     def __str__(self) -> str:
         return self.nome

@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from apps.cursos.models import Curso
+from apps.cursos.models import CursoModel
 
 class CursoSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = Curso
-        fields = ('id', 'nome_curso',  'codigo_curso', 'descricao','carga_horaria', 'turno', 'nivel')
+        model = CursoModel
+        fields = ('id', 'nome_curso',  'codigo_curso', 'descricao','carga_horaria', 'turno', 'nivel', 'professor', 'alunos')
