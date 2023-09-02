@@ -4,9 +4,9 @@ from apps.cursos.models import Curso
 
 class Cursos(admin.ModelAdmin):
     
-    list_display = ('id', 'nome_curso', 'descricao', 'carga_horaria', 'turno', 'nivel')
-    list_display_links = ('id', 'turno', 'carga_horaria')
-    search_fields = ('nivel', 'carga_horaria')
+    list_display = ('id', 'nome_curso', 'codigo_curso', 'descricao', 'carga_horaria', 'turno', 'nivel',)
+    list_display_links = ('id', 'turno', 'carga_horaria',)
+    search_fields = ('codigo_curso', 'nivel', 'carga_horaria',)
     
 admin.site.register(Curso, Cursos)
 
