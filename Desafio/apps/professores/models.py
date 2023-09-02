@@ -21,7 +21,7 @@ class ProfessorModel(models.Model):
 #
 #    Exemplos:
 #
-#    Se validate('07501414416')
+#    Se validate('57261914045')
 #        True
 #    Se validate('52998224725')
 #        False
