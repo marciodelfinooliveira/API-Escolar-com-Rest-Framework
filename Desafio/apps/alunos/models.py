@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 class AlunoModel(models.Model):
     
-#   A função VALIDADE a seguir efetua a validação do CPF, tanto formatação quanto dígito verificadores.
+#   A função VALIDATE a seguir efetua a validação do CPF, tanto formatação quanto dígito verificadores.
 #    
 #   PARA CRITERIO DE TESTE, INDICO O https://www.4devs.com.br/gerador_de_cpf
 #   PARA GERAR CPF VALIDOS E INVALIDOS PARA TESTE
@@ -22,7 +22,7 @@ class AlunoModel(models.Model):
 #
 #   Exemplos:
 #
-#   Se validate('07501414416')
+#   Se validate('32208051084')
 #        True
 #   Se validate('52998224725')
 #        False
