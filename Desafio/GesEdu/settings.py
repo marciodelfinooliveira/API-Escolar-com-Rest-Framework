@@ -129,8 +129,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates/static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Essa parte é destinada a mensagens de erro e sucesso
-MESSAGE_TAGS = {
-    messages.ERROR: 'danger',
-    messages.SUCCESS: 'success',
-}
