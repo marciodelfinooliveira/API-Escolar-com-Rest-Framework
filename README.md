@@ -4,9 +4,9 @@
 
 => Dotenv NÃO foi utilizado para a proteção de seriais ou variáveis POR ENQUANTO, uma vez que o objetivo da API é a sua avaliação pelos aplicadores com o objetivo de aprovar ou não o aluno para ingresso no projeto Fábrica de Software. Após todo o processo, Dotenv será utilizado.
 
-=> BANCO DE DADOS: RAILWAY
+=> BANCO DE DADOS: MySQL hospedado em nuvem pelo RailWay
 
-=> Foi escolhido e utilizado o bando de dados RailWay, a opção foi feita PRINCIPALMENTE por ele ser um data base EM NUVEM que utiliza MySQL, creio ser uma opção criativa em vista do pouco tempo e também de concorrentes.
+=> Foi escolhido e utilizado o RailWay para hospedagem do banco, a opção foi feita PRINCIPALMENTE por ele ser um database EM NUVEM o qual selecionei como MySQL, creio ser uma opção criativa em vista do pouco tempo e também de concorrentes.
 
 <p align="center">
   <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/9261905c-c91f-4197-b7c9-645bf91dcb8b" />
