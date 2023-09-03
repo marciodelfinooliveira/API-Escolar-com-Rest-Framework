@@ -56,6 +56,8 @@ class AlunoModel(models.Model):
 
         return True
     
+    # Declaração das colunas da tabela do banco de dados de Alunos
+    
     id = models.AutoField(primary_key=True, auto_created=True)
     nome = models.CharField(max_length=100, blank=False, null=False)
     email = models.EmailField(max_length=100, blank=False, null=False)

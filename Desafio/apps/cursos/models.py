@@ -21,6 +21,8 @@ class CursoModel(models.Model):
         ('90', '90 Horas'),
     )
     
+    # Declaração das colunas da tabela do banco de dados de Cursos
+    
     id = models.AutoField(primary_key=True, auto_created=True)    
     nome_curso = models.CharField(max_length=150, blank=False, null=False)
     codigo_curso = models.CharField(max_length=6, blank=False, null=False, unique=True)

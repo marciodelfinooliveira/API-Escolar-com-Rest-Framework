@@ -7,14 +7,16 @@ class ProfessorViewSet(viewsets.ModelViewSet):
     
     queryset = ProfessorModel.objects.all()
     serializer_class = ProfessorSerializer
+
+# A classe abaixo é uma view que aplica uma paginação a entidade ProfessorModel
 class ProfessorPag(ProfessorViewSet):
     
     PageNumberPagination.page_size = 3
     pagination_class = PageNumberPagination  # Aplica a paginação a esta view
-    queryset = ProfessorModel.objects.all()  # Sua consulta
+    queryset = ProfessorModel.objects.all()  # Consulta
 
     def get(self, request):
-        page = self.paginate_queryset(self.queryset)  # Pagina a consulta
+        page = self.paginate_queryset(self.queryset)  # Consulta
         if page is not None:
             serializer = ProfessorSerializer(page, many=True)
             return self.get_paginated_response(serializer.data)

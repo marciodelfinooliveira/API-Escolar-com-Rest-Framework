@@ -9,14 +9,15 @@ class CursoViewSet(viewsets.ModelViewSet):
     queryset = CursoModel.objects.all()
     serializer_class = CursoSerializer
 
+# A classe abaixo é uma view que aplica uma paginação a entidade CursoModel
 class CursosPag(CursoViewSet):
     
     PageNumberPagination.page_size = 2
     pagination_class = PageNumberPagination  # Aplica a paginação a esta view
-    queryset = CursoModel.objects.all()  # Sua consulta
+    queryset = CursoModel.objects.all()  # Consulta
 
     def get(self, request):
-        page = self.paginate_queryset(self.queryset)  # Pagina a consulta
+        page = self.paginate_queryset(self.queryset)  # Consulta
         if page is not None:
             serializer = CursoSerializer(page, many=True)
             return self.get_paginated_response(serializer.data)

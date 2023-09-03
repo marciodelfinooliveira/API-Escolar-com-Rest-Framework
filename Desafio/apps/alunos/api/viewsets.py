@@ -10,13 +10,14 @@ class AlunoViewSet(viewsets.ModelViewSet):
     serializer_class = AlunoSerializer
     
 
+# A classe abaixo é uma view que aplica uma paginação a entidade AlunoModel
 class AlunosPag(AlunoViewSet):
         
     pagination_class = PageNumberPagination  # Aplica a paginação a esta view
-    queryset = AlunoModel.objects.all()  # Sua consulta
+    queryset = AlunoModel.objects.all()  # Consulta
 
     def get(self, request):
-        page = self.paginate_queryset(self.queryset)  # Pagina a consulta
+        page = self.paginate_queryset(self.queryset)  # Consulta
         if page is not None:
             serializer = AlunoSerializer(page, many=True)
             return self.get_paginated_response(serializer.data)
