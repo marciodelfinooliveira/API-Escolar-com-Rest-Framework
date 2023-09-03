@@ -53,7 +53,7 @@ Aplique as Migrações do Banco de Dados, utilizei o Banco de Dados MySQL hosped
 >> python manage.py migrate
 >>
 
-Finalmete, execute o servidor
+Finalmente, execute o servidor
 
 >> python manage.py runserver
 >>
