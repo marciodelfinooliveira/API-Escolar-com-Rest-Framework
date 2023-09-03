@@ -48,7 +48,7 @@ Instale as dependências do projeto
 >> pip install -r requirements.txt
 >>
 
-Aplique as Migrações do Banco de Dados, utilizei o Banco de Dados em Nuvem Railway, logo por ser em Nuvem, irá apresentar alguma lentidão, visto que para evitar custos, optei por um Banco de Dados sem custos, com uma conta gratuita, logo, tem suas limitações
+Aplique as Migrações do Banco de Dados, utilizei o Banco de Dados MySQL hospedado em Nuvem chamado Railway, logo, por ser em Nuvem, irá apresentar alguma lentidão visto que para evitar custos, optei por uma hospedagem sem custos, utilizando uma conta gratuita, logo, apresenta limitações
 
 >> python manage.py migrate
 >>
