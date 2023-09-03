@@ -6,6 +6,8 @@
 
 => BANCO DE DADOS: MySQL hospedado em nuvem pelo RailWay
 
+=> [https://railway.app/](%E2%80%B8https://railway.app/)
+
 => Foi escolhido e utilizado o RailWay para hospedagem do banco, a opção foi feita PRINCIPALMENTE por ele ser um database EM NUVEM o qual selecionei como MySQL, creio ser uma opção criativa em vista do pouco tempo e também de concorrentes.
 
 <p align="center">
