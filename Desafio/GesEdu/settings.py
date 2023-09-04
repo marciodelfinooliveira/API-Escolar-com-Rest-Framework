@@ -66,6 +66,7 @@ WSGI_APPLICATION = 'GesEdu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# BANCO DE DADOS DO DJANGO (LOCAL)
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -73,14 +74,28 @@ WSGI_APPLICATION = 'GesEdu.wsgi.application'
 #     }
 # }
 
+# BANCO DE DADOS EM MYSQL HOSPEDADO EM NUVEM PELO RAILWAY (RAILWAY)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'railway',
+#         'USER': 'root',
+#         'PASSWORD': 'NHgYuHf9GXEe53IJ29ct',
+#         'HOST': 'containers-us-west-41.railway.app',
+#         'PORT': '5897'
+#     }
+# }
+
+
+# BANCO DE DADOS LOCAL USANDO MYSQL
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'NHgYuHf9GXEe53IJ29ct',
-        'HOST': 'containers-us-west-41.railway.app',
-        'PORT': '5897'
+        'NAME': 'gesedu',     # Nome do seu banco de dados
+        'USER': 'admin',         # Nome de usuário do MySQL
+        'PASSWORD': 'Rose.bud93', # Senha do MySQL
+        'HOST': 'localhost',      # Host do MySQL
+        'PORT': '3306',           # Porta do MySQL
     }
 }
 
