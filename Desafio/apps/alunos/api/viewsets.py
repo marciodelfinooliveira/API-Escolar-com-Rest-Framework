@@ -4,11 +4,11 @@ from apps.alunos.models import AlunoModel
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 
+
 class AlunoViewSet(viewsets.ModelViewSet):
         
     queryset = AlunoModel.objects.all()
     serializer_class = AlunoSerializer
-    
 
 # A classe abaixo é uma view que aplica uma paginação a entidade AlunoModel
 class AlunosPag(AlunoViewSet):
