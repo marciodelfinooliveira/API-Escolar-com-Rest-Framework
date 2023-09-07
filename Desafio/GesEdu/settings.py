@@ -1,5 +1,8 @@
 from pathlib import Path, os
-from django.contrib.messages import constants as messages
+#from django.contrib.messages import constants as messages
+import json
+import os
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,10 +14,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = str(os.environ.get('DEBUG')) == '1' # 1 == True e 0 == False
 
 ALLOWED_HOSTS = []
-
+if not DEBUG:
+    ALLOWED_HOSTS += [os.environ.get('ALLOWED_HOST')]
 
 # Application definition
 
@@ -66,34 +70,26 @@ WSGI_APPLICATION = 'GesEdu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# BANCO DE DADOS DO DJANGO (LOCAL)
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+# Código Abaixo serve para carregar as variáveis de ambiente do arquivo .env
 
-# BANCO DE DADOS EM MYSQL HOSPEDADO EM NUVEM PELO RAILWAY (RAILWAY)
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'railway',
-#         'USER': 'root',
-#         'PASSWORD': 'NHgYuHf9GXEe53IJ29ct',
-#         'HOST': 'containers-us-west-41.railway.app',
-#         'PORT': '5897'
-#     }
-# }
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+def get_secret(setting, secrets=secrets):
+    """Get secret setting or fail with ImproperlyConfigured"""
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 
-# BANCO DE DADOS LOCAL USANDO MYSQL
+# BANCO DE DADOS LOCAL USANDO MYSQL PROTEGIDO
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gesedu',     # Nome do seu banco de dados
         'USER': 'admin',         # Nome de usuário do MySQL
-        'PASSWORD': 'Rose.bud93', # Senha do MySQL
+        'PASSWORD': get_secret('DB_PASSWORD'), # Senha do MySQL
         'HOST': 'localhost',      # Host do MySQL
         'PORT': '3306',           # Porta do MySQL
     }
