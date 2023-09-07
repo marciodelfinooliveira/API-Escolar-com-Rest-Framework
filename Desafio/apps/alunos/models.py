@@ -60,8 +60,8 @@ class AlunoModel(models.Model):
     
     id = models.AutoField(primary_key=True, auto_created=True)
     nome = models.CharField(max_length=100, blank=False, null=False)
-    email = models.EmailField(max_length=100, blank=False, null=False)
-    data_nascimento = models.DateField(blank=False, null=False)
+    email = models.EmailField(max_length=100, blank=False, null=False, unique=True)
+    data_nascimento = models.DateField(blank=False, null=False, unique=True)
     cpf = models.CharField(max_length=11, validators=[validate], blank=False, null=False, unique=True)
     curso = models.ForeignKey(CursoModel, on_delete=models.CASCADE, blank=False, null=True)
    

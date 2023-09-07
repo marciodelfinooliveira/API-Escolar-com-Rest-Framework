@@ -65,8 +65,8 @@ class ProfessorModel(models.Model):
     
     id = models.AutoField(primary_key=True, auto_created=True)
     nome = models.CharField(max_length=100, blank=False, null=False)
-    cpf = models.CharField(max_length=11, validators=[validate], blank=False, null=False)
-    email = models.EmailField(max_length=100, blank=False, null=False)
+    cpf = models.CharField(max_length=11, validators=[validate], blank=False, null=False, unique=True)
+    email = models.EmailField(max_length=100, blank=False, null=False, unique=True)
     formacao = models.CharField(max_length=1, choices=FORMACAO, blank=False, null=False, default='G')
     
     def __str__(self) -> str:
