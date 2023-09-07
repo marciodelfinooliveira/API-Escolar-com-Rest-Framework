@@ -2,7 +2,7 @@
 
 <h2 align="left">Considerações Iniciais</h2>
 
-=> VERSÃO ATUAL UTILIZA DATABASE MYSQL LOCAL, Porem, já esteve hospedado em nuvem, as informações abaixo se referem a 1º versão do programa.
+=> VERSÃO ATUAL UTILIZA DATABASE MYSQL LOCAL, Porem, já esteve hospedado em nuvem, as informações abaixo se referem a 1º versão da API.
 
 => BANCO DE DADOS: MySQL hospedado em nuvem pelo RailWay
 
