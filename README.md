@@ -2,13 +2,13 @@
 
 <h2 align="left">Considerações Iniciais</h2>
 
-=> Dotenv NÃO foi utilizado para a proteção de seriais ou variáveis POR ENQUANTO, uma vez que o objetivo da API é a sua avaliação pelos aplicadores com o objetivo de aprovar ou não o aluno para ingresso no projeto Fábrica de Software. Após todo o processo, Dotenv será utilizado.
+=> VERSÃO ATUAL UTILIZA DATABASE MYSQL LOCAL, Porem, já esteve hospedado em nuvem, as informações abaixo se referem a 1º versão do programa.
 
 => BANCO DE DADOS: MySQL hospedado em nuvem pelo RailWay
 
 => [https://railway.app/](%E2%80%B8https://railway.app/)
 
-=> Foi escolhido e utilizado o RailWay para hospedagem do banco, a opção foi feita PRINCIPALMENTE por ele ser um database EM NUVEM o qual selecionei como MySQL, creio ser uma opção criativa em vista do pouco tempo e também de concorrentes.
+=> Foi escolhido e utilizado o RailWay para hospedagem do banco, a opção foi feita PRINCIPALMENTE por ele ser um database EM NUVEM o qual selecionei como MySQL, creio ser uma opção criativa em vista do pouco tempo e também de concorrentes ap cargp.
 
 <p align="center">
   <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/9261905c-c91f-4197-b7c9-645bf91dcb8b" />
@@ -21,8 +21,6 @@
 <p align="center">
   <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/b45c2769-dc7f-486a-9d37-fc5eb4df332c" />
 </p>
-
-=> AS CREDENCIAIS DO BANCO ESTÃO NA IMAGEM ACIMA OU NO SETTINGS.PY de GesEdu
 
 <h2 align="left">Configurando o Ambiente</h2>
 
@@ -48,7 +46,7 @@ Instale as dependências do projeto
 >> pip install -r requirements.txt
 >>
 
-Aplique as Migrações do Banco de Dados, utilizei o Banco de Dados MySQL hospedado em Nuvem chamado Railway, logo, por ser em Nuvem, irá apresentar alguma lentidão visto que para evitar custos, optei por uma hospedagem sem custos, utilizando uma conta gratuita, logo, apresenta limitações
+Aplique as Migrações do Banco de Dados
 
 >> python manage.py migrate
 >>
@@ -60,25 +58,26 @@ Finalmente, execute o servidor
 
 <h2 align="left">Requiremets.txt</h2>
 
-asgiref==3.7.2
-Django==4.2.4
-django-cors-headers==4.2.0
-djangorestframework==3.14.0
-mysqlclient==2.2.0
-node==1.2.1
-odict==1.9.0
-plumber==1.7
-pytz==2023.3
-sqlparse==0.4.4
-tzdata==2023.3
-zope.component==6.0
-zope.deferredimport==5.0
-zope.deprecation==5.0
-zope.event==5.0
-zope.hookable==5.4
-zope.interface==6.0
-zope.lifecycleevent==5.0
-zope.proxy==5.0.0
+- asgiref==3.7.2
+- Django==4.2.4
+- django-cors-headers==4.2.0
+- djangorestframework==3.14.0
+- mysqlclient==2.2.0
+- node==1.2.1
+- odict==1.9.0
+- plumber==1.7
+- python-dotenv==1.0.0
+- pytz==2023.3
+- sqlparse==0.4.4
+- tzdata==2023.3
+- zope.component==6.0
+- zope.deferredimport==5.0
+- zope.deprecation==5.0
+- zope.event==5.0
+- zope.hookable==5.4
+- zope.interface==6.0
+- zope.lifecycleevent==5.0
+- zope.proxy==5.0.0
 
 <h2 align="left">Realização do CRUD</h2>
 
