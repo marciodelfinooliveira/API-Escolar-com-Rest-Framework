@@ -30,7 +30,7 @@ Para executar corretamente a API, primeiro se certifique de executar os seguinte
 
 -> Crie o arquivo .env, nele insira uma  SECRET_KEY para o projeto ( sugiro o site https://miniwebtool.com/br/django-secret-key-generator/ para geração aleatória de chaves django)
 
--> Ainda no .env, escreva que DEBUG = True
+-> Ainda no .env, escreva que DEBUG = 1
 
 -> Ainda no .env, escreva que ALLOWED_HOST = ['127.0.0.1', 'localhost',]
 
