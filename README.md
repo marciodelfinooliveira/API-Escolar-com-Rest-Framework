@@ -1,117 +1,77 @@
-# :computer: GesEdu: API em Django Rest Framework para auxílio a aplicações de Gestão de Alunos
+# :computer: O repositório contém um exemplo de API criada com Django Rest Framework, a qual possui 3 entidades que se relacionam entre sí.
 
 <h2 align="left">Considerações Iniciais</h2>
 
-=> VERSÃO ATUAL UTILIZA DATABASE MYSQL LOCAL, Porem, já esteve hospedado em nuvem, as informações abaixo se referem a 1º versão da API.
+-> O Banco de Dados utilizado foi MySQL.
 
-=> BANCO DE DADOS: MySQL hospedado em nuvem pelo RailWay
+-> O projeto contêm alguns artefatos de segurança, alguns dos quais como o encobrimento de keys e a password do Banco de Dados, logo, se faz necessário a criação do arquivo ".env" para sua execução.
 
-=> [https://railway.app/](%E2%80%B8https://railway.app/)
-
-=> Foi escolhido e utilizado o RailWay para hospedagem do banco, a opção foi feita PRINCIPALMENTE por ele ser um database EM NUVEM o qual selecionei como MySQL, creio ser uma opção criativa em vista do pouco tempo e também de concorrentes ap cargp.
-
-<p align="center">
-  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/9261905c-c91f-4197-b7c9-645bf91dcb8b" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/1a3a7aab-cee2-4d35-ac3a-33c3661b3d11" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/b45c2769-dc7f-486a-9d37-fc5eb4df332c" />
-</p>
+-> O projeto foi desenvolvido com o objetivo de estudo e para pleitear uma vaga em estágio, logo, deixo registrado aqui como consulta a quem interessar.
 
 <h2 align="left">Configurando o Ambiente</h2>
 
-Para executar a API Primeiro se certifique de executar os seguintes códigos abaixo:
+Para executar corretamente a API, primeiro se certifique de executar os seguintes passos abaixo:
 
-Fazer clone do Repositório
+-> Fazer o clone do Repositório:
 
 >> git clone https://github.com/marciodelfinooliveira/Back-Fabrica.git
->>
 
-Com o repositório aberto, execute a Venv
+-> Com o repositório aberto, instale o Ambiente Virtual:
 
 >> python -m venv venv
->>
 
-Ative a Venv
+-> Ative-o:
 
->> venv\Scripts\activate
->>
+>> ./venv/Scripts/activate
 
-Instale as dependências do projeto
+-> Instale as dependências do projeto:
 
 >> pip install -r requirements.txt
->>
 
-Aplique as Migrações do Banco de Dados
+-> Crie o arquivo .env, nele insira uma  SECRET_KEY para o projeto ( sugiro o site https://miniwebtool.com/br/django-secret-key-generator/ para geração aleatória de chaves django)
 
+-> Ainda no .env, escreva que DEBUG = True
+
+-> Ainda no .env, escreva que ALLOWED_HOST = ['127.0.0.1', 'localhost',]
+
+-> Aplique as Migrações do Banco de Dados
+
+>> python manage.py makemigrations
 >> python manage.py migrate
->>
 
-Finalmente, execute o servidor
+-> Finalmente, execute o servidor
 
 >> python manage.py runserver
->>
 
-<h2 align="left">Requiremets.txt</h2>
 
-- asgiref==3.7.2
-- Django==4.2.4
-- django-cors-headers==4.2.0
-- djangorestframework==3.14.0
-- mysqlclient==2.2.0
-- node==1.2.1
-- odict==1.9.0
-- plumber==1.7
-- python-dotenv==1.0.0
-- pytz==2023.3
-- sqlparse==0.4.4
-- tzdata==2023.3
-- zope.component==6.0
-- zope.deferredimport==5.0
-- zope.deprecation==5.0
-- zope.event==5.0
-- zope.hookable==5.4
-- zope.interface==6.0
-- zope.lifecycleevent==5.0
-- zope.proxy==5.0.0
+<h2 align="left">Iterações da API</h2>
 
-<h2 align="left">Realização do CRUD</h2>
+Na API, temos uma iteração com um tema de gerenciamento de alunos em cursos, partindo de um caminho em comum, temos PROFESSORES, os quais podemos cadastrar inicialmente, CURSOS, onde podemos alocar um professor existente, e ALUNOS, que podem se matricular nos cursos, e claro, visualizar no Banco qual seu curso e qual seu respectivo professor: 
 
-<h4 align="left"> Models </h4>
+<p align="center">
+  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/c8c95199-04b4-4fbf-9063-cd4d04c156d2" />
+</p>
 
-- Foram definidos os modelos das apps nos seus respectivos arquivos de models
-- Foram criadas as classes que herdam as models.Model, estas classes representam as entidades presentes no aplicativo
-- Foram definidos os campos das models usando classes como models.CharField, models.IntegerField, etc.
-- Foram adicionados as relações entre as entidades, de forma mais específica, as apps do projeto são Alunos, Professores e Cursos.
-- Aluno recebe uma Foreign.Key de Curso, pois um aluno pode assistir aulas de um curso de sua escolha
-- Curso recebe uma Foreign.Key de Professores, pois um curso só pode acontecer se existir um professor vinculado a este.
+Para o cadastro de PROFESSORES, além do nome, email (único) e qual a formação do professor, temos uma validação de CPF, o qual é único, obrigatório e só será aceito caso o CPF seja válido, caso contrário, o cadastro não será realizado
 
-<h4 align="left"> Serializers </h4>
+<p align="center">
+  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/869fe4f9-d290-4557-8bb6-f462e3465ac7" />
+</p>
 
-- Foram criados os Serializers de todas as entidades
-- As classes que herdam de serializers.ModelSerializer para serializar e desserializar seus modelos foram criadas.
-- Foi criado a classe Meta em todas as serializers de todas as entidades
+Para o cadastro de CURSOS, além do nome, código (único), descrição, carga horária, turno e nível, é necessário que se cadastre um professor, o qual será responsável por lecionar no curso, porém, esta feature não é obrigatória, podendo se criar um curso sem professor alocado inicialmente, podendo ser alocado posteriormente.
 
-<h4 align="left"> Viewsets </h4>
+<p align="center">
+  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/143a94f8-7875-4d80-a93e-3ac104088803" />
+</p>
 
-- Foram criados as Viewsets de todas as entidades
-- As classes que herdam de viewsets.ModelSerializer usadas para definir conjuntos de visualizações (viewsets) que fornecem uma maneira conveniente de criar um CRUD
+Para o cadastro de ALUNOS, é nome, email (único), CPF (igualmente validado), data de nascimento e qual o curso ele será matriculado, de onde também é possível ele já saber qual o professor está designado ao curso.
 
-<h4 align="left"> URLs (Rotas) </h4>
+<p align="center">
+  <img src="" />
+</p>
 
-- As urls.py das entidades foram criados e configurados
-- Foi usado router para simplificar a configuração de urls
-- Foram associados as urls as views via métodos path
+Um detalhe que não deve passar despercebido é que a API está totalmente paginada.
 
-<h4 align="left"> Migrações </h4>
-
-- foram feitas as migrações via makemigrations e migrate
-
-<h4 align="left"> Execução do Servidor </h4>
-
-- O servidor de desenvolvimento foi iniciado usando o comando runserver.
-- Foram executadas as solicitações http (GET, POST, PUT, DELETE) para criar, ler, atualizar e excluir registros.
+<p align="center">
+  <img src="" />
+</p>
