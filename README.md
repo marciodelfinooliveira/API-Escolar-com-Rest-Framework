@@ -15,18 +15,22 @@ Para executar corretamente a API, primeiro se certifique de executar os seguinte
 -> Fazer o clone do Repositório:
 
 >> git clone https://github.com/marciodelfinooliveira/Back-Fabrica.git
+>>
 
 -> Com o repositório aberto, instale o Ambiente Virtual:
 
 >> python -m venv venv
+>>
 
 -> Ative-o:
 
 >> ./venv/Scripts/activate
+>>
 
 -> Instale as dependências do projeto:
 
 >> pip install -r requirements.txt
+>>
 
 -> Crie o arquivo .env, nele insira uma  SECRET_KEY para o projeto ( sugiro o site https://miniwebtool.com/br/django-secret-key-generator/ para geração aleatória de chaves django)
 
@@ -38,11 +42,12 @@ Para executar corretamente a API, primeiro se certifique de executar os seguinte
 
 >> python manage.py makemigrations
 >> python manage.py migrate
+>>
 
 -> Finalmente, execute o servidor
 
 >> python manage.py runserver
-
+>>
 
 <h2 align="left">Iterações da API</h2>
 
