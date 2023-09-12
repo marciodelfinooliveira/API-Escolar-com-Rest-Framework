@@ -41,6 +41,10 @@ Para executar corretamente a API, primeiro se certifique de executar os seguinte
 -> Aplique as Migrações do Banco de Dados
 
 >> python manage.py makemigrations
+>>
+
+-> Aplique as Migrações
+
 >> python manage.py migrate
 >>
 
