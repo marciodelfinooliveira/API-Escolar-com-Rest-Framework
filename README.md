@@ -67,11 +67,11 @@ Para o cadastro de CURSOS, além do nome, código (único), descrição, carga h
 Para o cadastro de ALUNOS, é nome, email (único), CPF (igualmente validado), data de nascimento e qual o curso ele será matriculado, de onde também é possível ele já saber qual o professor está designado ao curso.
 
 <p align="center">
-  <img src="" />
+  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/59a3f85e-8d99-4205-90fb-b9904098bc61" />
 </p>
 
 Um detalhe que não deve passar despercebido é que a API está totalmente paginada.
 
 <p align="center">
-  <img src="" />
+  <img src="https://github.com/marciodelfinooliveira/Back-Fabrica/assets/141946311/d78cac78-55ee-4630-9f29-599583f3104d" />
 </p>
