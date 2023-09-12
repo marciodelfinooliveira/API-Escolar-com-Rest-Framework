@@ -14,7 +14,7 @@ Para executar corretamente a API, primeiro se certifique de executar os seguinte
 
 -> Fazer o clone do Repositório:
 
->> git clone https://github.com/marciodelfinooliveira/Back-Fabrica.git
+>> git clone https://github.com/marciodelfinooliveira/Exemplo-Rest-Framework.git
 >>
 
 -> Com o repositório aberto, instale o Ambiente Virtual:
